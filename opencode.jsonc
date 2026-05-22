@@ -1,0 +1,75 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "agent": {
+    "build": {
+      "disable": true,
+    },
+    "plan": {
+      "disable": true,
+    },
+    "general": {
+      "disable": true,
+    },
+    "explore": {
+      "disable": true,
+    },
+  },
+  "mcp": {
+    "fsrw": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/Users/mkuckert/private/dev/agent-harness/bin/docker-mcp-gateway-run.sh",
+        "fsrw",
+      ],
+    },
+    "fsro": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/Users/mkuckert/private/dev/agent-harness/bin/docker-mcp-gateway-run.sh",
+        "fsro",
+      ],
+    },
+    "git": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/Users/mkuckert/private/dev/agent-harness/bin/docker-mcp-gateway-run.sh",
+        "git",
+      ],
+    },
+    "web": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "/Users/mkuckert/private/dev/agent-harness/bin/docker-mcp-gateway-run.sh",
+        "web",
+      ],
+    },
+  },
+  // See https://opencode.ai/docs/permissions/
+  "permission": {
+    // Permissive by default
+    "*": "deny",
+    "skill": "deny",
+
+    // we use containerized MCP server instead of buildin operations
+    "read": "deny",
+    "edit": "deny",
+    "glob": "deny",
+    "grep": "deny",
+    "list": "deny",
+    "bash": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
+    "todowrite": "deny",
+
+    // launching subagents (matches the subagent type)
+    "task": "allow",
+
+    // triggered when the same tool call repeats 3 times with identical input
+    "doom_loop": "ask",
+  },
+}
