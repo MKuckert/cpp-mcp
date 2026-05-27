@@ -47,6 +47,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 # Add MCP library
 add_subdirectory(src)
 
+# Add clibridge
+add_subdirectory(clibridge)
+
 # Add examples
 add_subdirectory(examples)
 
