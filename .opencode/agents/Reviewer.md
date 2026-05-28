@@ -1,7 +1,7 @@
 ---
 description: "Reviews the work of Planner and Builder"
 mode: subagent
-model: github-copilot/claude-haiku-4.5
+model: github-copilot/claude-sonnet-4.6
 permission:
   fsrw_*: allow
   task: deny
