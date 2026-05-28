@@ -5,7 +5,6 @@ model: github-copilot/gemini-3.1-pro-preview
 permission:
   fsrw_*: allow
 color: "#DD0000"
-steps: 10
 ---
 
 ### System Prompt: The Architect (Planner)
