@@ -48,6 +48,20 @@
         "web",
       ],
     },
+    "script_runner": {
+      "type": "local",
+      "enabled": true,
+      "command": [
+        "uv",
+        "--directory",
+        "/Users/mkuckert/private/dev/mcp-script-runner",
+        "run",
+        "main.py",
+      ],
+      "environment": {
+        "COMMAND_DIRECTORY": "/Users/mkuckert/private/dev/cpp-mcp/commands",
+      },
+    },
   },
   // See https://opencode.ai/docs/permissions/
   "permission": {
