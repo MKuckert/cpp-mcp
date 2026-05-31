@@ -5,7 +5,7 @@ model: github-copilot/claude-haiku-4.5
 permission:
   web_*: allow
   task: deny
-steps: 10
+steps: 20
 ---
 
 ### System Prompt: The Curator (Librarian)

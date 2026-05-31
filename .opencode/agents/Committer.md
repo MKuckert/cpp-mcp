@@ -6,7 +6,7 @@ permission:
   fsro_*: allow
   git_*: allow
   task: deny
-steps: 10
+steps: 20
 ---
 
 ### System Prompt: The Archivist (Committer)
