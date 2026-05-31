@@ -33,7 +33,7 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
 > Status Markers: [ ] Open, [/] In Progress, [x] Completed (By the Reviewer only!)
 
 - [ ] **Task 1: Add reproc++ Dependency**
-  - **Description:** Add a `FetchContent` block to the root `CMakeLists.txt` that
+  - **Description:** Add a `FetchContent` block to the clibridge `CMakeLists.txt` that
     downloads and builds `reproc` (tag `v14.2.4` or latest stable). Export the `reproc++`
     target so `clibridge` can link against it. Use `EXCLUDE_FROM_ALL` to avoid polluting
     the default install target. Example snippet:
@@ -47,12 +47,13 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
     set(REPROC++ ON)
     FetchContent_MakeAvailable(reproc)
     ```
-  - **Review Criteria:** `cmake -B build && cmake --build build` succeeds; `reproc++`
+  - **Review Criteria:** `script_runner_build_sh` succeeds; `reproc++`
     target is available for linking; no existing targets are broken.
 
 - [ ] **Task 2: Implement `ExecutableScanner`**
   - **Description:** Create `clibridge/executable_scanner.h` (header-only).
     Expose one function:
+
     ```cpp
     // Returns list of {tool_name, absolute_path} pairs.
     // tool_name = relative path string, e.g. "foo/bar/script.sh"
@@ -69,6 +70,7 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
     - If the result is empty, return empty vector (caller logs the warning).
     - **Note:** On Windows, `owner_exec` is unreliable; add a `#ifdef _WIN32`-guarded
       extension check (`.exe`, `.bat`, `.cmd`, `.ps1`) as a TODO stub.
+
   - **Review Criteria:** Unit tests cover: normal tree with mixed files, empty dir,
     nested executables, non-executable files excluded, non-existent dir throws.
 
@@ -129,8 +131,7 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
     5. Each tool handler:
        a. Extracts optional `"stdin"` param (default `""`).
        b. Checks `std::filesystem::exists(abs_path)` — if false, throws
-       `mcp_exception(invalid_params,
-    "Executable no longer exists: " + abs_path.string())`.
+       `mcp_exception(invalid_params, "Executable no longer exists: " + abs_path.string())`.
        c. Calls `run_process(abs_path, stdin_data)`.
        d. Serialises the result as a JSON object and returns it as the single text
        content item of a normal (non-error) MCP response:
