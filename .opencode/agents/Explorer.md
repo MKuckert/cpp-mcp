@@ -3,8 +3,22 @@ description: "Provides read access to the local code"
 mode: subagent
 model: google/gemini-3.1-flash-lite
 permission:
-  fsro_*: allow
+  read: allow
+  edit:
+    "*": deny
+    "PROJECT_MAP.md": allow
+  grep: allow
+  glob: allow
+  list: allow
+  bash: deny
+  question: deny
   task: deny
+  webfetch: deny
+  websearch: deny
+  context7_*: deny
+  skill: deny
+  todowrite: deny
+  doom_loop: allow
 steps: 20
 ---
 

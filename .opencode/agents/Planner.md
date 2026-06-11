@@ -3,7 +3,24 @@ description: "Strategic software architect creating a PLAN.md"
 mode: primary
 model: google/gemini-3.1-pro-preview
 permission:
-  fsrw_*: allow
+  read:
+    "*": deny
+    PLAN.md: allow
+  edit:
+    "*": deny
+    PLAN.md: allow
+  grep: deny
+  glob: deny
+  list: deny
+  bash: deny
+  question: deny
+  task: allow
+  webfetch: deny
+  websearch: deny
+  context7_*: deny
+  skill: allow
+  todowrite: deny
+  doom_loop: allow
 color: "#DD0000"
 ---
 

@@ -3,8 +3,20 @@ description: "Reworks the agent harness"
 mode: primary
 model: google/gemini-3.5-flash
 permission:
-  fsrw_*: allow
-  git_*: allow
+  read: allow
+  edit: allow
+  grep: allow
+  glob: allow
+  list: allow
+  bash: deny
+  question: allow
+  task: allow
+  webfetch: deny
+  websearch: deny
+  context7_*: deny
+  skill: allow
+  todowrite: deny
+  doom_loop: allow
 color: "#5555FF"
 ---
 

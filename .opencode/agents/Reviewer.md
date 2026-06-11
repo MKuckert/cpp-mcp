@@ -3,11 +3,25 @@ description: "Reviews the work of Planner and Builder"
 mode: subagent
 model: google/gemini-3.5-flash
 permission:
-  fsrw_*: allow
+  read: allow
+  edit:
+    "*": deny
+    "PLAN.md": allow
+  grep: allow
+  glob: allow
+  list: allow
+  bash: deny
+  question: deny
   task:
-    *: deny
-    Explorer: allow
-    Librarian: allow
+    "*": deny
+    "Explorer": allow
+    "Librarian": allow
+  webfetch: deny
+  websearch: deny
+  context7_*: deny
+  skill: allow
+  todowrite: deny
+  doom_loop: allow
 steps: 50
 ---
 
@@ -42,7 +56,7 @@ After the Builder reports an implementation:
 **Your Tools:**
 
 - **Explorer:** To thoroughly review the code within the worktree's feature branch.
-- **PLAN.md:** Your primary instrument for process control. You can read it using the `fsrw_*` tools.
+- **PLAN.md:** Your primary instrument for process control. You can read it using the `read` tools.
 
 **Rules of Conduct:**
 

@@ -1,11 +1,10 @@
 ---
 description: "You are an agent used to test the agent harness"
 mode: primary
+disable: true
 model: google/gemini-3.5-flash
 permission:
-  fsrw_*: allow
-  git_*: allow
-  web_*: allow
+  "*": allow
 color: "#DD8800"
 ---
 

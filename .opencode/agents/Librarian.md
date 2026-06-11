@@ -3,8 +3,20 @@ description: "Retrieves required information from external resources"
 mode: subagent
 model: google/gemini-3.1-flash-lite
 permission:
-  web_*: allow
+  read: deny
+  edit: deny
+  grep: deny
+  glob: deny
+  list: deny
+  bash: deny
+  question: deny
   task: deny
+  webfetch: allow
+  websearch: allow
+  context7_*: allow
+  skill: allow
+  todowrite: deny
+  doom_loop: allow
 steps: 20
 ---
 
