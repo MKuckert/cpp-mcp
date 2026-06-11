@@ -1,7 +1,7 @@
 ---
 description: "Retrieves required information from external resources"
 mode: subagent
-model: github-copilot/claude-haiku-4.5
+model: google/gemini-3.1-flash-lite
 permission:
   web_*: allow
   task: deny

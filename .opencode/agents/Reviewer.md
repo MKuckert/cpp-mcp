@@ -1,7 +1,7 @@
 ---
 description: "Reviews the work of Planner and Builder"
 mode: subagent
-model: github-copilot/claude-sonnet-4.6
+model: google/gemini-3.5-flash
 permission:
   fsrw_*: allow
   task:

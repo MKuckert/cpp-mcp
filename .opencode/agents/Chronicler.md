@@ -1,7 +1,7 @@
 ---
 description: "Evolves the agent harness"
 mode: primary
-model: github-copilot/claude-sonnet-4.6
+model: google/gemini-3.5-flash
 permission:
   fsrw_*: allow
   git_*: allow
