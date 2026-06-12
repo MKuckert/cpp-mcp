@@ -32,7 +32,7 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
 
 > Status Markers: [ ] Open, [/] In Progress, [x] Completed (By the Reviewer only!)
 
-- [ ] **Task 1: Add reproc++ Dependency**
+- [/] **Task 1: Add reproc++ Dependency**
   - **Description:** Add a `FetchContent` block to the clibridge `CMakeLists.txt` that
     downloads and builds `reproc` (tag `v14.2.4` or latest stable). Export the `reproc++`
     target so `clibridge` can link against it. Use `EXCLUDE_FROM_ALL` to avoid polluting

@@ -11,8 +11,8 @@ permission:
   bash:
     "*": deny
     "git status": allow
-    "git add": allow
-    "git commit": allow
+    "git add *": allow
+    "git commit *": allow
   question: deny
   task: deny
   webfetch: deny
