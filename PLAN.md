@@ -32,7 +32,7 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
 
 > Status Markers: [ ] Open, [/] In Progress, [x] Completed (By the Reviewer only!)
 
-- [/] **Task 1: Add reproc++ Dependency**
+- [x] **Task 1: Add reproc++ Dependency**
   - **Description:** Add a `FetchContent` block to the clibridge `CMakeLists.txt` that
     downloads and builds `reproc` (tag `v14.2.4` or latest stable). Export the `reproc++`
     target so `clibridge` can link against it. Use `EXCLUDE_FROM_ALL` to avoid polluting
@@ -196,4 +196,4 @@ structured response; MCP `isError` is reserved for OS/server-level failures only
 
 ## 🚦 Final Status (Mode 2: Code Review)
 
-- [Pending Builder Phase]
+- **Task 1:** APPROVED. `reproc` (v14.2.4) integrated cleanly via CMake FetchContent. Option cache variables are set appropriately, and targets are available without breaking existing dependencies.
