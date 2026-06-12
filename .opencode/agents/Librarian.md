@@ -1,7 +1,7 @@
 ---
 description: "Retrieves required information from external resources"
 mode: subagent
-model: google/gemini-3.1-flash-lite
+model: omlx/gemma-4-26B-A4B
 permission:
   read: deny
   edit: deny
